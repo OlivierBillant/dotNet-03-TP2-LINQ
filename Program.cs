@@ -92,13 +92,24 @@ foreach (var auteur in ListeAuteurs)
 }
 Console.WriteLine();
 
+// Alternative : moyenne globale des revenus
+decimal totalGlobalFacture = 0;
+foreach (var auteur in ListeAuteurs)
+{
+    foreach (var facture in auteur.Factures)
+    {
+        totalGlobalFacture += facture.Montant;
+    }
+}
+Console.WriteLine($"Le montant moyen gagné par les auteurs est de : {totalGlobalFacture/ListeAuteurs.Count()} euros \n");
+
 // o	Afficher les auteurs et la liste de leurs livres
 Console.WriteLine("Liste des auteurs et de leurs livres");
 
 var AuteursProductif = ListeLivres.Select(livre => livre.Auteur);
 
-var result = ListeAuteurs.Where(p => !AuteursProductif.Any(p2 => p2.Nom == p.Nom));
-foreach (var auteur in result)
+var AuteurNonProductif = ListeAuteurs.Where(p => !AuteursProductif.Any(p2 => p2.Nom == p.Nom));
+foreach (var auteur in AuteurNonProductif)
 {
     Console.WriteLine(auteur);
     Console.WriteLine("Cet auteur n'a écrit aucun livre");
@@ -137,7 +148,7 @@ foreach (var livre in LivresInfPageMoy) { Console.WriteLine($"{livre}"); }
 Console.WriteLine();
 
 // o	Afficher l'auteur ayant écrit le moins de livres
-foreach (var auteur in result)
+foreach (var auteur in AuteurNonProductif)
 {
     Console.WriteLine($"L'auteur le moins prolifique est {auteur.Prenom} {auteur.Nom} \n");
 }

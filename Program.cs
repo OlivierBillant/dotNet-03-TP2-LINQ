@@ -49,7 +49,18 @@ Console.WriteLine("Liste des livres groupés par Auteur");
 var ListeLivresGroupedByAuteur = ListeLivres.GroupBy(livre => livre.Auteur);
 
 var AuteurProlifique = ListeLivres.GroupBy(livre => livre.Auteur).OrderByDescending(livres => livres.Count()).FirstOrDefault().FirstOrDefault().Auteur;
+// var AuteurProlifique = ListeLivres.GroupBy(livre => livre.Auteur).OrderByDescending(livres => livres.Count()).FirstOrDefault().Key;
 Console.WriteLine($"L'auteur le plus prolifique est {AuteurProlifique.Prenom} {AuteurProlifique.Nom} \n");
+
+//Alternate
+var auteurPlus = ListeLivres
+    .GroupBy(livre => livre.Auteur, (key, group) => new
+    {
+        Key = $"{key.Prenom} {key.Nom}",
+        NombreLivre = group.Count()
+    })
+    .MaxBy(anonym => anonym.NombreLivre);
+Console.WriteLine(auteurPlus.Key);
 
 // o	Afficher le nombre moyen de pages par livre par auteur
 Console.WriteLine("Nombre moyen de pages par Auteur");
@@ -64,11 +75,26 @@ foreach (var LivresParAuteur in ListeLivresGroupedByAuteur)
     }
     Console.WriteLine($"Le nombre de pages moyen de {LivresParAuteur.Key.Prenom} {LivresParAuteur.Key.Nom} est de {NbPages / NbLivres}");
 }
+
+//Alternate
+var nbrPageMoyAut = ListeLivres
+    .GroupBy(livre => livre.Auteur, (key, group) => new
+    {
+        Key = key,
+        AvgPage = group.Average(livre => livre.NbPages)
+    });
+foreach (var avgPageAuteur in nbrPageMoyAut)
+{
+    Console.WriteLine(avgPageAuteur);
+}
+
+
 Console.WriteLine();
+
 
 // o	Afficher le titre du livre avec le plus de pages
 Console.WriteLine($"Le livre le plus long est : {ListeLivres.OrderByDescending(livre => livre.NbPages).FirstOrDefault().Titre} \n");
-    //On pourrait également utiliser la méthode MaxBy(livre => livre.NbPage)
+//On pourrait également utiliser la méthode MaxBy(livre => livre.NbPage)
 
 
 // o	Afficher combien ont gagné les auteurs en moyenne (moyenne des factures)
@@ -101,7 +127,13 @@ foreach (var auteur in ListeAuteurs)
         totalGlobalFacture += facture.Montant;
     }
 }
-Console.WriteLine($"Le montant moyen gagné par les auteurs est de : {totalGlobalFacture/ListeAuteurs.Count()} euros \n");
+Console.WriteLine($"Le montant moyen gagné par les auteurs est de : {totalGlobalFacture / ListeAuteurs.Count()} euros \n");
+//Alternate LINQ : 
+Console.WriteLine("Affichage alternatif du montant moyen gagné");
+var moyenneFactures = ListeAuteurs
+    .SelectMany(auteur => auteur.Factures)
+    .Average(facture => facture.Montant);
+Console.WriteLine(moyenneFactures);
 
 // o	Afficher les auteurs et la liste de leurs livres
 Console.WriteLine("Liste des auteurs et de leurs livres");
@@ -145,6 +177,16 @@ foreach (var livre in ListeLivres)
 }
 var LivresInfPageMoy = ListeLivres.Where(livre => livre.NbPages > (NbPageTotal / ListeLivres.Count));
 foreach (var livre in LivresInfPageMoy) { Console.WriteLine($"{livre}"); }
+
+//Alternate
+var moyennePage = ListeLivres.Average(livre => livre.NbPages);
+var livresLongs = ListeLivres
+    .Where(livre => moyennePage < livre.NbPages)
+    .Select(Livre => Livre.Titre);
+foreach (var livre in livresLongs)
+{
+    Console.WriteLine(livre);
+}
 Console.WriteLine();
 
 // o	Afficher l'auteur ayant écrit le moins de livres
@@ -152,4 +194,8 @@ foreach (var auteur in AuteurNonProductif)
 {
     Console.WriteLine($"L'auteur le moins prolifique est {auteur.Prenom} {auteur.Nom} \n");
 }
+
+var auteursSansLivre = ListeAuteurs
+    .MinBy(auteur => ListeLivres.Count(livre => livre.Auteur == auteur));
+Console.WriteLine(auteursSansLivre);
 

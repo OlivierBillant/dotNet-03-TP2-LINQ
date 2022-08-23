@@ -1,0 +1,15 @@
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\bin\Debug\net6.0\DotNet.03.TP2.Linq.exe
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\bin\Debug\net6.0\DotNet.03.TP2.Linq.deps.json
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\bin\Debug\net6.0\DotNet.03.TP2.Linq.runtimeconfig.json
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\bin\Debug\net6.0\DotNet.03.TP2.Linq.dll
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\bin\Debug\net6.0\DotNet.03.TP2.Linq.pdb
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.csproj.AssemblyReference.cache
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.AssemblyInfoInputs.cache
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.AssemblyInfo.cs
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.csproj.CoreCompileInputs.cache
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.dll
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\refint\DotNet.03.TP2.Linq.dll
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.pdb
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\DotNet.03.TP2.Linq.genruntimeconfig.cache
+C:\Users\obillant2022\Documents\DotNet\TP\DotNet.TP\DotNet.03.TP2.Linq\obj\Debug\net6.0\ref\DotNet.03.TP2.Linq.dll

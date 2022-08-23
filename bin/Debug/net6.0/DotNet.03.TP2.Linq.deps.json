@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DotNet.03.TP2.Linq/1.0.0": {
+        "runtime": {
+          "DotNet.03.TP2.Linq.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotNet.03.TP2.Linq/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "DotNet.03.TP2.Linq": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
